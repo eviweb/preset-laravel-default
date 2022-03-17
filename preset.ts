@@ -6,6 +6,7 @@ export default definePreset({
 	options: {
 		newLaravel: null,
 		dir: null,
+		viteJs: true,
 	},
 	handler: async (context) => {
 		if (context.options.dir) {
@@ -54,6 +55,13 @@ export default definePreset({
 			})
 
 			context.applyOptions.targetDirectory = targetdir
+		}
+
+		if (context.options.viteJs) {
+			await applyNestedPreset({
+				preset: 'laravel:vite',
+				args: ['--no-tailwindcss']
+			})
 		}
 
 		await extractTemplates()
