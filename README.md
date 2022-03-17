@@ -7,12 +7,14 @@
 </p>
 
 <h2 align="center">laravel-default</h2>
-<pre><div align="center">npx @preset/cli apply username/laravel-default</div></pre>
+<pre><div align="center">npx @preset/cli apply eviweb/laravel-default</div></pre>
 
+<br />
+<div align="center">Want to know more on how to use it?<br/>Please refer to the <a href="/MANUAL.md">documentation</a>.</div>
 <br />
 
 <div align="center">
-  This preset was made by Eric Villard.
+  This preset was made by <a href="https://github.com/eviweb">eviweb</a>.
   <br />
   <br />
   <a href="https://preset.dev">Learn more</a>
