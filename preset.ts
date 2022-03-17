@@ -31,8 +31,9 @@ export default definePreset({
 			})
 			await executeCommand({
 				command: 'git', arguments: [
+					'--git-dir=' + targetdir + '/.git',
+					'--work-tree=' + targetdir,
 					'init',
-					context.options.newLaravel,
 				]
 			})
 			await executeCommand({
