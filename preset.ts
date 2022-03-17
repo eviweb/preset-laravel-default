@@ -1,13 +1,25 @@
 import path from "path"
+import { existsSync, mkdirSync } from "fs"
 
 export default definePreset({
 	name: 'laravel-default',
 	options: {
-		newLaravel: null// ...
+		newLaravel: null,
+		dir: null,
 	},
 	handler: async (context) => {
+		if (context.options.dir) {
+			if (!existsSync(context.options.dir)) {
+				mkdirSync(context.options.dir, { recursive: true, mode: 0o755 })
+			}
+
+			context.applyOptions.targetDirectory = path.resolve(context.options.dir)
+		} else {
+			context.options.dir = context.applyOptions.targetDirectory
+		}
+
 		if (context.options.newLaravel) {
-			let targetdir = path.resolve(context.options.newLaravel)
+			let targetdir = path.resolve(path.join(context.options.dir, context.options.newLaravel))
 
 			await executeCommand({
 				command: 'composer', arguments: [
