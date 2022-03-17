@@ -4,7 +4,7 @@ A default [Laravel][laravel] [Preset][preset] and scaffolding.
 
 ## Usage
 
-Run `preset apply eviweb/laravel-default` for a default installation, or use the form `preset apply eviweb/laravel-default [OPTIONS]` where `[OPTIONS]` are described below.
+Run `preset apply eviweb/laravel-default` for a default installation, or use the form `preset apply eviweb/laravel-default [OPTIONS]` where `[OPTIONS]` are [described below][manual-options].
 
 > Please refer to [Preset CLI Quick Start][preset-quick-start] for more information regarding the usage of the `preset` command.
 
@@ -21,6 +21,7 @@ This project is licensed under the terms of the [MIT License][mit-license].
 
 [laravel]: https://laravel.com
 [laravel-presets-vite]: https://github.com/laravel-presets/vite
+[manual-options]: /MANUAL.md#options
 [mit-license]: /LICENSE.md
 [preset]: https://preset.dev
 [preset-quick-start]: https://preset.dev/quick-start.html
