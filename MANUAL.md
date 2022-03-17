@@ -13,7 +13,7 @@ Run `preset apply eviweb/laravel-default` for a default installation, or use the
 * `--new-laravel PROJECT_NAME`: it creates a Laravel project scaffolding in a subdirectory named as `PROJECT_NAME`.
 * `--dir DIRECTORY_PATH`: it changes the Preset command target directory to `DIRECTORY_PATH`. It recursively tries to create the directory tree if `DIRECTORY_PATH` does not exist.  
 If not specify the current directory is used by default.
-* `--no-vite-js`: by default the [laravel-presets/vite] nested preset[laravel-presets-vite] is installed by default with the `--no-tailwindcss` option. If you do not want to install it, just use this command line option.
+* `--no-vite-js`: by default the [laravel-presets/vite][laravel-presets-vite] nested preset is installed by default with the `--no-tailwindcss` option. If you do not want to install it, just use this command line option.
 
 ## License
 
