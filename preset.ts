@@ -1,5 +1,6 @@
 import path from "path"
 import { existsSync, mkdirSync } from "fs"
+import * as git from 'src/command/git'
 
 export default definePreset({
 	name: 'laravel-default',
@@ -29,30 +30,10 @@ export default definePreset({
 					context.options.newLaravel,
 				]
 			})
-			await executeCommand({
-				command: 'git', arguments: [
-					'--git-dir=' + targetdir + '/.git',
-					'--work-tree=' + targetdir,
-					'init',
-				]
-			})
-			await executeCommand({
-				command: 'git', arguments: [
-					'--git-dir=' + targetdir + '/.git',
-					'--work-tree=' + targetdir,
-					'add',
-					'.',
-				]
-			})
-			await executeCommand({
-				command: 'git', arguments: [
-					'--git-dir=' + targetdir + '/.git',
-					'--work-tree=' + targetdir,
-					'commit',
-					'-v',
-					'-sm',
-					'init: first commit',
-				]
+
+			await git.init({
+				message: 'chore: initialize project',
+				worktree: targetdir,
 			})
 
 			context.applyOptions.targetDirectory = targetdir
@@ -63,23 +44,10 @@ export default definePreset({
 				preset: 'laravel:vite',
 				args: ['--no-tailwindcss']
 			})
-			await executeCommand({
-				command: 'git', arguments: [
-					'--git-dir=' + context.applyOptions.targetDirectory + '/.git',
-					'--work-tree=' + context.applyOptions.targetDirectory,
-					'add',
-					'.',
-				]
-			})
-			await executeCommand({
-				command: 'git', arguments: [
-					'--git-dir=' + context.applyOptions.targetDirectory + '/.git',
-					'--work-tree=' + context.applyOptions.targetDirectory,
-					'commit',
-					'-v',
-					'-sm',
-					'feat: add vitejs support',
-				]
+
+			await git.commit({
+				message: 'feat: add vitejs support',
+				worktree: context.applyOptions.targetDirectory,
 			})
 		}
 
