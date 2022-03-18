@@ -5,8 +5,8 @@ import * as git from 'src/command/git'
 export default definePreset({
 	name: 'laravel-default',
 	options: {
-		newLaravel: null,
 		dir: null,
+		newLaravel: null,
 		viteJs: true,
 	},
 	handler: async (context) => {
