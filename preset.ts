@@ -63,6 +63,24 @@ export default definePreset({
 				preset: 'laravel:vite',
 				args: ['--no-tailwindcss']
 			})
+			await executeCommand({
+				command: 'git', arguments: [
+					'--git-dir=' + context.applyOptions.targetDirectory + '/.git',
+					'--work-tree=' + context.applyOptions.targetDirectory,
+					'add',
+					'.',
+				]
+			})
+			await executeCommand({
+				command: 'git', arguments: [
+					'--git-dir=' + context.applyOptions.targetDirectory + '/.git',
+					'--work-tree=' + context.applyOptions.targetDirectory,
+					'commit',
+					'-v',
+					'-sm',
+					'feat: add vitejs support',
+				]
+			})
 		}
 
 		await extractTemplates()
