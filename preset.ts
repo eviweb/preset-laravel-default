@@ -7,6 +7,7 @@ export default definePreset({
 	options: {
 		dir: null,
 		newLaravel: null,
+		usePreset: null,
 		viteJs: true,
 	},
 	handler: async (context) => {
@@ -49,6 +50,28 @@ export default definePreset({
 				message: 'feat: add vitejs support',
 				worktree: context.applyOptions.targetDirectory,
 			})
+		}
+
+		if (context.options.usePreset) {
+			let presetInfo = context.options.usePreset
+
+			if (!Array.isArray(presetInfo)) {
+				presetInfo = new Array<string>(presetInfo);
+			}
+			for (var i = 0, l = presetInfo.length; i < l; i++) {
+				let presetArgs = presetInfo[i].split(',')
+				let presetName = presetArgs.shift();
+
+				await applyNestedPreset({
+					preset: presetName,
+					args: presetArgs,
+				})
+
+				await git.commit({
+					message: 'feat: apply ' + presetName + ' preset',
+					worktree: context.applyOptions.targetDirectory,
+				})
+			}
 		}
 
 		await extractTemplates()
