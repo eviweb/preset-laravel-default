@@ -7,7 +7,7 @@
 </p>
 
 <h2 align="center">laravel-default</h2>
-<pre><div align="center">npx @preset/cli apply eviweb/laravel-default</div></pre>
+<pre><div align="center">npx @preset/cli apply eviweb/preset-laravel-default</div></pre>
 
 <br />
 <div align="center">Want to know more on how to use it?<br/>Please refer to the <a href="/MANUAL.md">documentation</a>.</div>
