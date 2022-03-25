@@ -4,7 +4,7 @@ A default [Laravel][laravel] [Preset][preset] and scaffolding.
 
 ## Usage
 
-Run `preset apply eviweb/laravel-default` for a default installation, or use the form `preset apply eviweb/laravel-default [OPTIONS]` where `[OPTIONS]` are [described below][manual-options].
+Run `preset apply eviweb/preset-laravel-default` for a default installation, or use the form `preset apply eviweb/preset-laravel-default [OPTIONS]` where `[OPTIONS]` are [described below][manual-options].
 
 > Please refer to [Preset CLI Quick Start][preset-quick-start] for more information regarding the usage of the `preset` command.
 
@@ -17,7 +17,7 @@ If not specify the current directory is used by default.
 * `--use-preset PRESET[,PRESET_OPTIONS]`: apply the given `PRESET`.  
 If the preset has to be applied with options, simply pass them in a comma separated list (see example below).  
 This option can be used multiple times to apply many presets.
-  > eg. `preset apply eviweb/laravel-default --use-preset laravel-presets/pest --use-preset laravel-presets/vite,--no-tailwindcss`
+  > eg. `preset apply eviweb/preset-laravel-default --use-preset laravel-presets/pest --use-preset laravel-presets/vite,--no-tailwindcss`
 
 ## License
 
